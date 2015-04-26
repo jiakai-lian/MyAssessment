@@ -10,7 +10,8 @@
 
 @implementation LinkedStoryboardSegue
 
-// the id shoule like "ViewControllerID@StoryboardName"
+// the id should be like "SceneName@StoryboardName" which will load the target scene at the target storyboard
+// or @"@StoryboardName" which will load the initial view controller at the target storyboard
 + (UIViewController *)sceneNamed:(NSString *)identifier
 {
     NSArray *info = [identifier componentsSeparatedByString:@"@"];
