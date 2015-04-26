@@ -11,12 +11,7 @@
 #import "ColorButton.h"
 #import "NumberViewController.h"
 
-//type
-typedef NS_ENUM(NSUInteger, SettingType){
-    BUTTON_BLUE_Ind = 0,
-    BUTTON_RED_TAG = 1,
-    BUTTON_GREEN_TAG = 2,
-};
+static NSString *const STRING_BUTTON_PRESSED_FORMAT = @"button pressed is %@";
 
 static NSString *const NONE = @"none";
 static NSString *const SEGUE_ID = @"@View2";
@@ -33,11 +28,18 @@ static NSString *const SEGUE_ID = @"@View2";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    //register to receive notification
     [[NSNotificationCenter defaultCenter]
             addObserver:self
                selector:@selector(didReceivedButtonGoPressedNotification:)
                    name:NOTIFICATION_BUTTON_GO_PRESSED
                  object:nil];
+}
+
+- (void) dealloc
+{
+    //remove from observer list
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICATION_BUTTON_GO_PRESSED object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +56,7 @@ static NSString *const SEGUE_ID = @"@View2";
     {
         ColorButton *btn = (ColorButton *) sender;
 
+        //reset label text to none
         self.label.text = NONE;
         if (btn.color)
         {
@@ -77,7 +80,7 @@ static NSString *const SEGUE_ID = @"@View2";
 
     if ([notification.object isKindOfClass:[NSString class]])
     {
-        self.label.text = [notification object];
+        self.label.text = [NSString stringWithFormat:STRING_BUTTON_PRESSED_FORMAT, [notification object]];
     }
 }
 
@@ -93,7 +96,9 @@ static NSString *const SEGUE_ID = @"@View2";
     {
         ColorButton *btn = (ColorButton *) sender;
         View2ViewController *destination = (View2ViewController *) [segue destinationViewController];
+        //set which button is pressed by button tag
         destination.btnPressed = btn.tag;
+        //set background color
         destination.view.backgroundColor = btn.color;
     }
 

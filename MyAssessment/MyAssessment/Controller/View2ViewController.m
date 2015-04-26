@@ -26,6 +26,7 @@ static NSString *const STRING_BUTTON_PRESSED_FORMAT = @"button pressed is %ld";
 
     [self configureViews];
 
+    //register to receive notification
     [[NSNotificationCenter defaultCenter]
             addObserver:self
                selector:@selector(didReceivedButtonGoPressedNotification:)
@@ -33,10 +34,17 @@ static NSString *const STRING_BUTTON_PRESSED_FORMAT = @"button pressed is %ld";
                  object:nil];
 }
 
+- (void) dealloc
+{
+    //remove from observer list
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NOTIFICATION_BUTTON_GO_PRESSED object:nil];
+}
+
 
 #pragma mark - configureViews
 - (void)configureViews
 {
+    //update label text
     self.labelButtonPressed.text = [NSString stringWithFormat:STRING_BUTTON_PRESSED_FORMAT, (long) self.btnPressed];
 }
 
@@ -44,6 +52,8 @@ static NSString *const STRING_BUTTON_PRESSED_FORMAT = @"button pressed is %ld";
 - (void)didReceivedButtonGoPressedNotification:(NSNotification *)notification
 {
     NSLog(@"notification: %@", notification);
+    
+    //back to previous screen
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -58,11 +68,10 @@ static NSString *const STRING_BUTTON_PRESSED_FORMAT = @"button pressed is %ld";
     UIViewController *controller = segue.destinationViewController;
     if ([controller isKindOfClass:[NumberViewController class]])
     {
+        //set the number label text by segue identifier
         NumberViewController *destination = (NumberViewController *) controller;
         destination.strNumber = segue.identifier;
     }
-
-
 }
 
 @end
