@@ -17,6 +17,10 @@
 		3E1B15B11AED266100B117FC /* LinkedStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B15B01AED266100B117FC /* LinkedStoryboardSegue.m */; };
 		3E1B15B31AED26F500B117FC /* View2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1B15B21AED26F500B117FC /* View2.storyboard */; };
 		3E1B15B51AED26FD00B117FC /* View3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1B15B41AED26FD00B117FC /* View3.storyboard */; };
+		3E1B15B91AED29F200B117FC /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B15B81AED29F200B117FC /* ColorButton.m */; };
+		3E1B15BC1AED2CB200B117FC /* View2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B15BB1AED2CB200B117FC /* View2ViewController.m */; };
+		3E1B15C71AED3A7B00B117FC /* NumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B15C61AED3A7B00B117FC /* NumberViewController.m */; };
+		3E1B15CA1AED45F400B117FC /* View3TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B15C91AED45F400B117FC /* View3TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,14 @@
 		3E1B15B01AED266100B117FC /* LinkedStoryboardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedStoryboardSegue.m; sourceTree = "<group>"; };
 		3E1B15B21AED26F500B117FC /* View2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = View2.storyboard; sourceTree = "<group>"; };
 		3E1B15B41AED26FD00B117FC /* View3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = View3.storyboard; sourceTree = "<group>"; };
+		3E1B15B71AED29F200B117FC /* ColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorButton.h; sourceTree = "<group>"; };
+		3E1B15B81AED29F200B117FC /* ColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
+		3E1B15BA1AED2CB200B117FC /* View2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View2ViewController.h; sourceTree = "<group>"; };
+		3E1B15BB1AED2CB200B117FC /* View2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View2ViewController.m; sourceTree = "<group>"; };
+		3E1B15C51AED3A7B00B117FC /* NumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberViewController.h; sourceTree = "<group>"; };
+		3E1B15C61AED3A7B00B117FC /* NumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberViewController.m; sourceTree = "<group>"; };
+		3E1B15C81AED45F400B117FC /* View3TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View3TableViewController.h; sourceTree = "<group>"; };
+		3E1B15C91AED45F400B117FC /* View3TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View3TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +144,12 @@
 			children = (
 				3E1B15AB1AED20AF00B117FC /* View1ViewController.h */,
 				3E1B15AC1AED20AF00B117FC /* View1ViewController.m */,
+				3E1B15BA1AED2CB200B117FC /* View2ViewController.h */,
+				3E1B15BB1AED2CB200B117FC /* View2ViewController.m */,
+				3E1B15C51AED3A7B00B117FC /* NumberViewController.h */,
+				3E1B15C61AED3A7B00B117FC /* NumberViewController.m */,
+				3E1B15C81AED45F400B117FC /* View3TableViewController.h */,
+				3E1B15C91AED45F400B117FC /* View3TableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -149,6 +167,8 @@
 				3E1B158C1AED203400B117FC /* View1.storyboard */,
 				3E1B15B21AED26F500B117FC /* View2.storyboard */,
 				3E1B15B41AED26FD00B117FC /* View3.storyboard */,
+				3E1B15B71AED29F200B117FC /* ColorButton.h */,
+				3E1B15B81AED29F200B117FC /* ColorButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -265,7 +285,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E1B15881AED203400B117FC /* AppDelegate.m in Sources */,
+				3E1B15C71AED3A7B00B117FC /* NumberViewController.m in Sources */,
 				3E1B15851AED203400B117FC /* main.m in Sources */,
+				3E1B15BC1AED2CB200B117FC /* View2ViewController.m in Sources */,
+				3E1B15CA1AED45F400B117FC /* View3TableViewController.m in Sources */,
+				3E1B15B91AED29F200B117FC /* ColorButton.m in Sources */,
 				3E1B15AD1AED20AF00B117FC /* View1ViewController.m in Sources */,
 				3E1B15B11AED266100B117FC /* LinkedStoryboardSegue.m in Sources */,
 			);
