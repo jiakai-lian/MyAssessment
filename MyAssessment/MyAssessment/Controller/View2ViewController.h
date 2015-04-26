@@ -10,7 +10,7 @@
 
 @interface View2ViewController : UIViewController
 
-@property (nonatomic,strong) UIColor *color;
-@property (nonatomic,assign) NSInteger btnPressed;
+@property(nonatomic, strong) UIColor *color;
+@property(nonatomic, assign) NSInteger btnPressed;
 
 @end

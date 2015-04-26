@@ -16,11 +16,11 @@
     NSArray *info = [identifier componentsSeparatedByString:@"@"];
     NSString *storyboard_name = info[1];
     NSString *scene_name = info[0];
-    
+
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboard_name
                                                          bundle:nil];
     UIViewController *scene = nil;
-    
+
     if (scene_name.length == 0)
     {
         scene = [storyboard instantiateInitialViewController];
@@ -29,7 +29,7 @@
     {
         scene = [storyboard instantiateViewControllerWithIdentifier:scene_name];
     }
-    
+
     return scene;
 }
 

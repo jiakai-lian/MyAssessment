@@ -13,42 +13,44 @@ static NSString const *DATETIME_FORMAT = @"dd' 'MMMM' 'yyyy";
 
 @interface View3TableViewController ()
 
-@property (nonatomic, copy) NSDateFormatter * dateFormatter;
-@property (nonatomic, copy) NSCalendar * calender;
+@property(nonatomic, copy) NSDateFormatter *dateFormatter;
+@property(nonatomic, copy) NSCalendar *calender;
 @end
 
 @implementation View3TableViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-                  
-- (NSDateFormatter*)dateFormatter
+
+- (NSDateFormatter *)dateFormatter
 {
     //lazy init
-    if(!_dateFormatter)
+    if (!_dateFormatter)
     {
-       _dateFormatter = [[NSDateFormatter alloc] init];
-       [_dateFormatter setDateFormat:DATETIME_FORMAT.copy];
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        [_dateFormatter setDateFormat:DATETIME_FORMAT.copy];
     }
     return _dateFormatter;
 }
 
-- (NSCalendar*)calender
+- (NSCalendar *)calender
 {
     //lazy init
-    if(!_calender)
+    if (!_calender)
     {
         _calender = [NSCalendar currentCalendar];
     }
@@ -57,27 +59,30 @@ static NSString const *DATETIME_FORMAT = @"dd' 'MMMM' 'yyyy";
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     // Return the number of sections.
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     // Return the number of rows in the section.
     return NUMBER_OF_DAYS;
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString * const CELL_ID = @"Cell";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *const CELL_ID = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_ID forIndexPath:indexPath];
-    
+
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setDay:indexPath.row];
-    
+
     // Configure the cell...
-    cell.textLabel.text = [self.dateFormatter stringFromDate: [self.calender dateByAddingComponents:components toDate:[NSDate new] options:0]];
-    
+    cell.textLabel.text = [self.dateFormatter stringFromDate:[self.calender dateByAddingComponents:components toDate:[NSDate new] options:0]];
+
     return cell;
 }
 

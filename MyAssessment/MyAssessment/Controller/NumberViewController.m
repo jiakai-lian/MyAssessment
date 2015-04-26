@@ -8,36 +8,39 @@
 
 #import "NumberViewController.h"
 
-NSString * const NOTIFICATION_BUTTON_GO_PRESSED = @"ButtonGoPressed";
+NSString *const NOTIFICATION_BUTTON_GO_PRESSED = @"ButtonGoPressed";
 
 @interface NumberViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *labelNumber;
+@property(weak, nonatomic) IBOutlet UILabel *labelNumber;
 
 @end
 
 @implementation NumberViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     [self configureViews];
 }
 
 #pragma mark - configureViews
-- (void) configureViews
+- (void)configureViews
 {
     self.labelNumber.text = self.strNumber;
 }
 
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - IBAction
-- (IBAction)tapOnButtonGo:(id)sender {
+- (IBAction)tapOnButtonGo:(id)sender
+{
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_BUTTON_GO_PRESSED object:self.strNumber userInfo:nil];
 }
 

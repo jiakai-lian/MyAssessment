@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString * const NOTIFICATION_BUTTON_GO_PRESSED;
+extern NSString *const NOTIFICATION_BUTTON_GO_PRESSED;
 
 @interface NumberViewController : UIViewController
 
-@property (nonatomic,copy) NSString *strNumber;
+@property(nonatomic, copy) NSString *strNumber;
 
 @end

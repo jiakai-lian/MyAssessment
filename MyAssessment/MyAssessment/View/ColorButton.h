@@ -10,6 +10,6 @@
 
 @interface ColorButton : UIButton
 
-@property (nonatomic,copy) UIColor *color;
+@property(nonatomic, copy) UIColor *color;
 
 @end

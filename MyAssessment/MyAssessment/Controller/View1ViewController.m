@@ -18,41 +18,44 @@ typedef NS_ENUM(NSUInteger, SettingType){
     BUTTON_GREEN_TAG = 2,
 };
 
-static NSString * const NONE = @"none";
-static NSString * const SEGUE_ID = @"@View2";
+static NSString *const NONE = @"none";
+static NSString *const SEGUE_ID = @"@View2";
 
 @interface View1ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *label;
+@property(weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
 @implementation View1ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(didReceivedButtonGoPressedNotification:)
-     name:NOTIFICATION_BUTTON_GO_PRESSED
-     object:nil];
+            addObserver:self
+               selector:@selector(didReceivedButtonGoPressedNotification:)
+                   name:NOTIFICATION_BUTTON_GO_PRESSED
+                 object:nil];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - IBAction
-- (IBAction)tapOnButton:(id)sender {
-    
-    if([sender isKindOfClass:[ColorButton class]])
+- (IBAction)tapOnButton:(id)sender
+{
+
+    if ([sender isKindOfClass:[ColorButton class]])
     {
-        ColorButton * btn = (ColorButton *)sender;
-        
+        ColorButton *btn = (ColorButton *) sender;
+
         self.label.text = NONE;
-        if(btn.color)
+        if (btn.color)
         {
             [self performSegueWithIdentifier:SEGUE_ID sender:btn];
         }
@@ -68,31 +71,33 @@ static NSString * const SEGUE_ID = @"@View2";
 }
 
 #pragma mark - notification
-- (void)didReceivedButtonGoPressedNotification:(NSNotification *)notification {
-    NSLog(@"notification: %@",notification);
-    
-    if([notification.object isKindOfClass:[NSString class]])
+- (void)didReceivedButtonGoPressedNotification:(NSNotification *)notification
+{
+    NSLog(@"notification: %@", notification);
+
+    if ([notification.object isKindOfClass:[NSString class]])
     {
-    self.label.text = [notification object];
+        self.label.text = [notification object];
     }
 }
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
-    if([segue.identifier isEqualToString:SEGUE_ID])
+
+    if ([segue.identifier isEqualToString:SEGUE_ID])
     {
-        ColorButton * btn = (ColorButton *)sender;
-        View2ViewController * destination = (View2ViewController *)[segue destinationViewController];
+        ColorButton *btn = (ColorButton *) sender;
+        View2ViewController *destination = (View2ViewController *) [segue destinationViewController];
         destination.btnPressed = btn.tag;
         destination.view.backgroundColor = btn.color;
     }
-    
-    
+
+
 }
 
 
