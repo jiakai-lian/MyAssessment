@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View 1-->
+        <!--View1-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="View1ViewController" sceneMemberID="viewController">
+                <viewController title="View1" id="BYZ-38-t0r" customClass="View1ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -127,11 +127,32 @@
                             <constraint firstItem="XVu-2A-rsL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rHw-8c-rCi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="View 1" id="YiW-AD-foP"/>
+                    <navigationItem key="navigationItem" title="View1" id="YiW-AD-foP"/>
+                    <connections>
+                        <segue destination="nKg-Vq-DE3" kind="show" identifier="@View2" id="2dM-MN-DSh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1028" y="1090"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="M6M-kJ-1CG">
+            <objects>
+                <viewController id="nKg-Vq-DE3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zrm-e1-2XN"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Z2-Ot-GcI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rxw-C9-eos">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KwM-en-53I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1713" y="1090"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1zk-wj-cxa">
